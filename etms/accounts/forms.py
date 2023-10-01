@@ -12,17 +12,7 @@ class newform(UserCreationForm):
 
 
 
-    # def password_clean(self):
-    #     password1 =self.cleaned_data['password1']
-    #     password2 = self.cleaned_data['password2']
-    #
-    #     if password1 and password2 and password1!=password2:
-    #         raise ValidationError("password are not same")
-    #     else:
-    #         return password1
-    #
-    # def save(self, commit=True):
-    #     user=User.objects.create_user(self.cleaned_data['username'],self.cleaned_data['password1'],self.cleaned_data['email'])
-    #
-    #     return user
+class loginForm(forms.Form):
+    employeeName = forms.CharField(max_length=100)
+    password = forms.CharField(widget=forms.PasswordInput)
 
