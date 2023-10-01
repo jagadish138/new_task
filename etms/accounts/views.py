@@ -4,7 +4,7 @@ from .forms import newform
 from django.contrib.auth.models import User
 # Create your views here.
 
-def login(request):
+def Register(request):
     form = newform()
     if request.method == "POST":
         form = newform(request.POST)
@@ -15,6 +15,7 @@ def login(request):
 
             new_user = User(username=username,password=pass1,email=mail)
             new_user.save()
+            return render(request, "home.html")
 
     form = newform()
     return render(request, "Register.html", {"form": form})
